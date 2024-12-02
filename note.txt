@@ -1,0 +1,32 @@
+sudo snap stop semaphore
+
+sudo semaphore user add --admin \
+--login admin \
+--name=admin \
+--email=admin@example.com \
+--password=dtest123
+
+sudo snap start semaphore
+
+sudo snap services semaphore
+
+
+sudo snap get semaphore
+
+
+$ sudo snap get semaphore ports
+error: snap "semaphore" has no "ports" configuration option
+
+
+
+sudo snap set semaphore port=8080
+
+sudo snap restart semaphore
+sudo snap get semaphore
+
+
+http://localhost:8080
+
+
+
+helm install -n ansible-awx --create-namespace ansible-awx-operator awx-operator/awx-operator

@@ -1,0 +1,29 @@
+---
+apiVersion: awx.ansible.com/v1beta1
+kind: AWX
+metadata:
+  name: awx
+  namespace: ansible-awx
+spec:
+  
+  # Set the replicas count to scale AWX pods
+  replicas: 1
+  
+  admin_user: dtest
+  admin_password_secret: awx-admin-password
+
+  # ingress_type: ingress
+  # ingress_tls_secret: awx-secret-tls
+  # hostname: fqdn.awx.host.com     # Replace fqdn.awx.host.com with Host FQDN and DO NOT use IP.
+
+  service_type: nodeport
+
+  postgres_configuration_secret: awx-postgres-configuration
+
+  postgres_storage_class: nfs-client
+  postgres_storage_requirements:
+    requests:
+      storage: 8Gi
+
+  projects_persistence: true
+  projects_existing_claim: awx-projects-claim

@@ -1,0 +1,7 @@
+- name: Manage VPS Windows
+  hosts: vps_windows
+  gather_facts: false
+  tasks:
+    # Step 1: Check connection to VPS
+    - name: Check connection to VPS
+      win_ping:

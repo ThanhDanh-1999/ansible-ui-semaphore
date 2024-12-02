@@ -1,0 +1,48 @@
+all:
+  children:
+    ungrouped: {}
+    vps_windows:
+      hosts:
+        SV189:
+          ansible_connection: winrm
+          ansible_host: 103.155.161.139
+          ansible_password: 8CBZn=E1uA8U
+          ansible_user: Administrator
+          ansible_winrm_server_cert_validation: ignore
+        SV190:
+          ansible_connection: winrm
+          ansible_host: 103.155.161.140
+          ansible_password: 8CBZn=E1uA8U
+          ansible_user: Administrator
+          ansible_winrm_server_cert_validation: ignore
+
+
+---
+ansible_connection: winrm
+ansible_host: 103.147.122.229
+ansible_password: '8CBZn=E1uA8U'
+ansible_user: Administrator
+ansible_winrm_server_cert_validation: ignore
+---
+ansible_connection: winrm
+ansible_host: 103.147.122.230
+ansible_password: '8CBZn=E1uA8U'
+ansible_user: Administrator
+ansible_winrm_server_cert_validation: ignore
+
+all:
+  children:
+    vps_windows:
+      hosts:
+        SV128:
+          ansible_connection: winrm
+          ansible_host: 103.147.122.229
+          ansible_password: '8CBZn=E1uA8U'
+          ansible_user: Administrator
+          ansible_winrm_server_cert_validation: ignore
+        SV129:
+          ansible_connection: winrm
+          ansible_host: 103.147.122.230
+          ansible_password: '8CBZn=E1uA8U'
+          ansible_user: Administrator
+          ansible_winrm_server_cert_validation: ignore
